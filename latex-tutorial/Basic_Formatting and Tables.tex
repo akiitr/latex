@@ -1,0 +1,112 @@
+% since chapter is only available in report and book document class so we will use report.
+\documentclass[12pt]{report}
+\usepackage[utf8]{inputenc}
+
+%\usepackage{parskip}
+
+\title{Basic Formatting: Chapters, sections, paragraphs, table and table of contents.}
+\author{Anubhav Kumar}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\begin{abstract}
+    This is the brief description of the content present here. It comes under a begin block with abstract env.
+\end{abstract}
+
+
+
+\textbf{Main Content Starts:}
+
+First Paragraph: After our abstract has been done we can move ahead with our first paragraph.
+
+Second Paragraph: This line starts the second paragraph. \\This will start in new line which can be done from double backslash.\newline Apart from that newline can also be used for non indenting line unlike paragraph.\\But make sure that you are not making to much new line by newline or backslash cause it can mesh up spacing in LATEX document. You can use parskip then using enter will create non indented line. You can see this error in the same line status.\\
+
+\textbf{Chapters and Sections:}
+
+\chapter{First Chapter}
+
+\section{Introduction}
+This starts our first section Introduction. You should be an explorer and curious which means that you should try everything so that you can understand whether that is your cup of tea.
+\section{Mind Aging}
+But one thing to keep in mind is that you have a bell curve with your mental efficiency over your age. It will be on peak of that efficiency when in the age between 25-31 after that it will start degrade.
+\subsection{initial mould}
+This is the period from zero to ten years and 70 to above age group where your mind has very loose connections and everything is very difficult to figure out.
+\subsection{flexible and creative}
+This can be till 10 to 25 but also when you have acquired a lot of knowledge after 25 if you try it can be creative by connecting the various learning.
+\subsection{highly active and learning}
+This is the stage where you learn the information existing in the world and try to understand the information and explore the interested area. But due to lot of information people get lost here. So focus is key area and learn the skills which will be required for future and also for your next generation to pass on.
+\subsubsection{What you get from above subsection?}
+\paragraph{This is the sub subsection of course in a paragraph where you are reading this information.}
+\subparagraph This is subparagraph and what are you waiting for it is the age you are in go learn as much as possible as the clock is ticking.
+% Since this is unnumbered section it will not be catch by the content so adding manual contents at the same position which is the best practice as it will keep the integrity of the document.
+\addcontentsline{toc}{section}{UN-numbered Section}
+\section*{Unnumbered}
+UN-numbering can be activated by putting a * before the curly braces of the section.
+
+\chapter{Tables}
+\section{A simplest form of table}
+This is the the most basic form of the table using the tabular env. In this env l for left r for right and c for center alignment. centre env keep the content in centre need to be told to dumb people.
+\begin{center}
+    \begin{tabular}{ l  c  r }
+        cell1 & cell2 & cell3 \\
+        cell4 & cell5 & cell6
+    \end{tabular}
+\end{center}
+\section{Adding some fancy stuff to tabular env}
+Tabular env is very flexible it can have line by | specifying in env and add border by horizontal line command hline.
+\begin{center}
+    \begin{tabular}{ |l|c|r| }
+        \hline
+        cell1 & cell2 & cell3 \\
+        \hline
+        cell4 & cell5 & cell6 \\
+        \hline
+    \end{tabular}
+\end{center}
+We can get more fancy by plying with the separator | and hline command and [1ex] for defining spacing between lines.
+\begin{center}
+ \begin{tabular}{||c c c c||} 
+ \hline
+ Col1 & Col2 & Col2 & Col3 \\ [0.5ex] 
+ \hline\hline
+ 1 & 6 & 87837 & 787 \\ 
+ \hline
+ 2 & 7 & 78 & 5415 \\
+ \hline
+ 3 & 545 & 778 & 7507 \\
+ \hline
+ 4 & 545 & 18744 & 7560 \\
+ \hline
+ 5 & 88 & 788 & 6344 \\ [1ex] 
+ \hline
+\end{tabular}
+\end{center}
+\textbf{Creating a table can be difficult in LATEX use TablesGenerator.com online tool to get LATEX code directly or use file > paste to paste excel copied table.}
+
+\section{Captions labels and references for Tables:}
+It is very similar to image but the environment changes as there is some change in formatting but that is taken care by the Latex so just you have to use table env than figure.
+Table \ref{table: ak} is an example of referenced \LaTeX{} elements. See how beautiful LATEX is written in previous line.
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{||c c c c||}
+        \hline\hline
+        1 & 6 & 87837 & 787 \\ 
+        2 & 7 & 78 & 5415 \\
+        3 & 545 & 778 & 7507 \\
+        4 & 545 & 18744 & 7560 \\
+        5 & 88 & 788 & 6344 \\ [1ex] 
+        \hline
+    \end{tabular}
+    \caption{Table to test Caption and tables}
+    \label{table: ak}
+\end{table}
+
+\section{Adding a Table to contents}
+It is very simple you just have to use tableofcontents function to list automatically generate the table of contents. 
+This is the comment at the content position: Since unnumbered content is not added by default so you have to add this manually at the same position you have the content.Since this is unnumbered section it will not be catch by the content so adding manual contents at the same position which is the best practice as it will keep the integrity of the document.
+
+\end{document}
